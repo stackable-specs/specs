@@ -1,0 +1,2 @@
+git clone git@github.com:stackable-specs/stack-fastapi.git stacks/stack-fastapi
+git clone git@github.com:stackable-specs/stack-commander.git stacks/stack-commander

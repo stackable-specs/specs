@@ -1,0 +1,35 @@
+{
+  "id": "py-import-order",
+  "layer": "language",
+  "purpose": "Consistent import order keeps diffs small, makes merges predictable, and reduces cognitive load when scanning a file. Without a shared rule, contributors reach for different defaults (alphabetical, dependency order, by category) and the codebase churns.",
+  "references": [
+    {
+      "type": "external",
+      "ref": "https://peps.python.org/pep-0008/#imports",
+      "description": "PEP 8 import guidance"
+    },
+    {
+      "type": "external",
+      "ref": "https://pycqa.github.io/isort/",
+      "description": "isort configuration reference"
+    },
+    {
+      "type": "adr",
+      "ref": "ADR-014",
+      "description": "decision to adopt the black profile for isort"
+    }
+  ],
+  "rules": [
+    {
+      "statement": "Group imports in three blocks separated by a single blank line: standard library, third-party, first-party.",
+      "references": ["https://peps.python.org/pep-0008/#imports"]
+    },
+    { "statement": "Sort imports alphabetically within each group." },
+    { "statement": "Place `import x` statements before `from x import y` statements within the same group." },
+    { "statement": "Do not use wildcard imports (`from x import *`) outside of `__init__.py` re-exports." },
+    {
+      "statement": "Run `isort` with the `black` profile as part of pre-commit.",
+      "references": ["ADR-014"]
+    }
+  ]
+}

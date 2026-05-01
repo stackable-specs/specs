@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "required": ["id", "layer", "purpose", "rules"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "language",
+        "platform",
+        "interface",
+        "presentation",
+        "delivery",
+        "observability",
+        "security",
+        "practices",
+        "quality"
+      ]
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "do": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional scannable bullets summarizing recommended practice. Distill the spirit of `rules`; do not contradict it."
+    },
+    "dont": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional scannable bullets summarizing anti-patterns this spec prevents. Distill the spirit of `rules`; do not contradict it."
+    },
+    "extends": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "ref"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["spec", "adr", "bdr", "external"]
+          },
+          "ref": {
+            "type": "string",
+            "description": "Identifier, path, or URL"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["statement"],
+        "properties": {
+          "statement": {
+            "type": "string"
+          },
+          "references": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional links to supporting references"
+          }
+        }
+      }
+    }
+  }
+}
