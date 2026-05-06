@@ -35,7 +35,17 @@ The layers are ordered from *what a system is made of* (language) up through *ho
   /security         # authn, authz, secrets, data handling, threat model
   /practices        # workflow, review, branching, decision-making
   /quality          # testing, linting, gating, SLOs
+  /business-logic   # domain-neutral primitives for modeling business rules (BLT)
 ```
+
+## Business Logic Templates (BLT)
+
+[`specs/business-logic`](specs/business-logic) is a domain-neutral library for modeling business rules as structured, auditable specs rather than prose or code. It sits alongside the standard layers and is independent of any specific language or platform.
+
+| Sub-directory | Contents |
+| --- | --- |
+| [`primitives/`](specs/business-logic/primitives/README.md) | Reusable atoms: entities, facts, conditions, effects, state, time, events, and more |
+| [`practices/`](specs/business-logic/practices/blt.md) | Authoring workflow, naming conventions, testing, and versioning guidance |
 
 ## How to use it
 

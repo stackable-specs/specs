@@ -1,3 +1,5 @@
 !specs
 !README.md
 .playwright-cli
+.tmp
+stacks
